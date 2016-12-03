@@ -8,20 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		A63ECECE1DE5D3DB0047A521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECECD1DE5D3DB0047A521 /* AppDelegate.swift */; };
-		A63ECED01DE5D3DB0047A521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECECF1DE5D3DB0047A521 /* ViewController.swift */; };
 		A63ECED31DE5D3DB0047A521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63ECED11DE5D3DB0047A521 /* Main.storyboard */; };
 		A63ECED51DE5D3DB0047A521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63ECED41DE5D3DB0047A521 /* Assets.xcassets */; };
 		A63ECED81DE5D3DB0047A521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63ECED61DE5D3DB0047A521 /* LaunchScreen.storyboard */; };
+		A63ECEE71DE5D4830047A521 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEE51DE5D4830047A521 /* KeychainWrapper.m */; };
+		A63ECEED1DE5D4A80047A521 /* MRFingerPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEEA1DE5D4A80047A521 /* MRFingerPrint.swift */; };
+		A63ECEEE1DE5D4A80047A521 /* MRPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEEB1DE5D4A80047A521 /* MRPasscodeViewController.swift */; };
+		A63ECEF21DE5D4B90047A521 /* MRQuickAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEF11DE5D4B90047A521 /* MRQuickAnimations.swift */; };
+		A63ECEF51DE5D52C0047A521 /* MRVerifyCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEF41DE5D52C0047A521 /* MRVerifyCredentials.swift */; };
+		A63ECEF81DE5D5530047A521 /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEF71DE5D5530047A521 /* TextFieldHandler.swift */; };
+		A63ECEFB1DE5D96C0047A521 /* MRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEFA1DE5D96C0047A521 /* MRLoginViewController.swift */; };
+		A63ECEFD1DE5D9B40047A521 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63ECEFC1DE5D9B40047A521 /* Login.storyboard */; };
+		A63ECF001DE5DDCF0047A521 /* MRLoginConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECEFF1DE5DDCF0047A521 /* MRLoginConstants.swift */; };
+		A63ECF0D1DE5F3450047A521 /* AppDelegate+AppIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63ECF0C1DE5F3450047A521 /* AppDelegate+AppIntro.swift */; };
+		A63ECF111DE6097A0047A521 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63ECF101DE6097A0047A521 /* Passcode.storyboard */; };
+		A6597AC91DF1D9F90038CA71 /* MRSelectLoginAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6597AC81DF1D9F90038CA71 /* MRSelectLoginAlertController.swift */; };
+		A6597ACD1DF1E8390038CA71 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6597ACC1DF1E8390038CA71 /* Validator.m */; };
+		A6597ACF1DF20C670038CA71 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6597ACE1DF20C670038CA71 /* MainAppViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A63ECECA1DE5D3DB0047A521 /* MRBuildingBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRBuildingBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63ECECD1DE5D3DB0047A521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A63ECECF1DE5D3DB0047A521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A63ECED21DE5D3DB0047A521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A63ECED41DE5D3DB0047A521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A63ECED71DE5D3DB0047A521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63ECED91DE5D3DB0047A521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A63ECEE41DE5D4830047A521 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		A63ECEE51DE5D4830047A521 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		A63ECEEA1DE5D4A80047A521 /* MRFingerPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRFingerPrint.swift; sourceTree = "<group>"; };
+		A63ECEEB1DE5D4A80047A521 /* MRPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRPasscodeViewController.swift; sourceTree = "<group>"; };
+		A63ECEF11DE5D4B90047A521 /* MRQuickAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MRQuickAnimations.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A63ECEF41DE5D52C0047A521 /* MRVerifyCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRVerifyCredentials.swift; sourceTree = "<group>"; };
+		A63ECEF71DE5D5530047A521 /* TextFieldHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldHandler.swift; sourceTree = "<group>"; };
+		A63ECEFA1DE5D96C0047A521 /* MRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRLoginViewController.swift; sourceTree = "<group>"; };
+		A63ECEFC1DE5D9B40047A521 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A63ECEFF1DE5DDCF0047A521 /* MRLoginConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MRLoginConstants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A63ECF051DE5E3C90047A521 /* MRBuildingBlocks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MRBuildingBlocks-Bridging-Header.h"; sourceTree = "<group>"; };
+		A63ECF0C1DE5F3450047A521 /* AppDelegate+AppIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+AppIntro.swift"; sourceTree = "<group>"; };
+		A63ECF101DE6097A0047A521 /* Passcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
+		A6597AC71DF1CF220038CA71 /* MRBuildingBlocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MRBuildingBlocks.entitlements; sourceTree = "<group>"; };
+		A6597AC81DF1D9F90038CA71 /* MRSelectLoginAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRSelectLoginAlertController.swift; sourceTree = "<group>"; };
+		A6597ACB1DF1E8390038CA71 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
+		A6597ACC1DF1E8390038CA71 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validator.m; sourceTree = "<group>"; };
+		A6597ACE1DF20C670038CA71 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +84,119 @@
 		A63ECECC1DE5D3DB0047A521 /* MRBuildingBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				A63ECECD1DE5D3DB0047A521 /* AppDelegate.swift */,
-				A63ECECF1DE5D3DB0047A521 /* ViewController.swift */,
-				A63ECED11DE5D3DB0047A521 /* Main.storyboard */,
-				A63ECED41DE5D3DB0047A521 /* Assets.xcassets */,
-				A63ECED61DE5D3DB0047A521 /* LaunchScreen.storyboard */,
+				A63ECEDF1DE5D3F10047A521 /* AppDelegate */,
+				A63ECEE11DE5D41A0047A521 /* UI */,
+				A63ECEE01DE5D40B0047A521 /* View Controllers */,
+				A63ECEE91DE5D4960047A521 /* Controllers */,
+				A63ECEF31DE5D51A0047A521 /* Interactors */,
+				A63ECEF61DE5D5480047A521 /* Delegates and Helpers */,
+				A63ECEF01DE5D4AE0047A521 /* Animations */,
+				A63ECEFE1DE5DCFF0047A521 /* Constants */,
+				A6597ACA1DF1E82C0038CA71 /* Validator */,
+				A63ECEE21DE5D46C0047A521 /* Keychain */,
 				A63ECED91DE5D3DB0047A521 /* Info.plist */,
+				A6597AC71DF1CF220038CA71 /* MRBuildingBlocks.entitlements */,
+				A63ECF051DE5E3C90047A521 /* MRBuildingBlocks-Bridging-Header.h */,
 			);
 			path = MRBuildingBlocks;
+			sourceTree = "<group>";
+		};
+		A63ECEDF1DE5D3F10047A521 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECECD1DE5D3DB0047A521 /* AppDelegate.swift */,
+				A63ECF0C1DE5F3450047A521 /* AppDelegate+AppIntro.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A63ECEE01DE5D40B0047A521 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEEB1DE5D4A80047A521 /* MRPasscodeViewController.swift */,
+				A6597AC81DF1D9F90038CA71 /* MRSelectLoginAlertController.swift */,
+				A63ECEFA1DE5D96C0047A521 /* MRLoginViewController.swift */,
+				A6597ACE1DF20C670038CA71 /* MainAppViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A63ECEE11DE5D41A0047A521 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECED11DE5D3DB0047A521 /* Main.storyboard */,
+				A63ECEFC1DE5D9B40047A521 /* Login.storyboard */,
+				A63ECF101DE6097A0047A521 /* Passcode.storyboard */,
+				A63ECED41DE5D3DB0047A521 /* Assets.xcassets */,
+				A63ECED61DE5D3DB0047A521 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A63ECEE21DE5D46C0047A521 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEE31DE5D4830047A521 /* KeychainWrapper */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
+		A63ECEE31DE5D4830047A521 /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEE41DE5D4830047A521 /* KeychainWrapper.h */,
+				A63ECEE51DE5D4830047A521 /* KeychainWrapper.m */,
+			);
+			path = KeychainWrapper;
+			sourceTree = "<group>";
+		};
+		A63ECEE91DE5D4960047A521 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEEA1DE5D4A80047A521 /* MRFingerPrint.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A63ECEF01DE5D4AE0047A521 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEF11DE5D4B90047A521 /* MRQuickAnimations.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		A63ECEF31DE5D51A0047A521 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEF41DE5D52C0047A521 /* MRVerifyCredentials.swift */,
+			);
+			name = Interactors;
+			sourceTree = "<group>";
+		};
+		A63ECEF61DE5D5480047A521 /* Delegates and Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEF71DE5D5530047A521 /* TextFieldHandler.swift */,
+			);
+			name = "Delegates and Helpers";
+			sourceTree = "<group>";
+		};
+		A63ECEFE1DE5DCFF0047A521 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A63ECEFF1DE5DDCF0047A521 /* MRLoginConstants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		A6597ACA1DF1E82C0038CA71 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				A6597ACB1DF1E8390038CA71 /* Validator.h */,
+				A6597ACC1DF1E8390038CA71 /* Validator.m */,
+			);
+			name = Validator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +233,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = LC6LA68FBS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,6 +266,8 @@
 			files = (
 				A63ECED81DE5D3DB0047A521 /* LaunchScreen.storyboard in Resources */,
 				A63ECED51DE5D3DB0047A521 /* Assets.xcassets in Resources */,
+				A63ECEFD1DE5D9B40047A521 /* Login.storyboard in Resources */,
+				A63ECF111DE6097A0047A521 /* Passcode.storyboard in Resources */,
 				A63ECED31DE5D3DB0047A521 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +279,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63ECED01DE5D3DB0047A521 /* ViewController.swift in Sources */,
+				A63ECEF21DE5D4B90047A521 /* MRQuickAnimations.swift in Sources */,
+				A63ECEE71DE5D4830047A521 /* KeychainWrapper.m in Sources */,
+				A6597AC91DF1D9F90038CA71 /* MRSelectLoginAlertController.swift in Sources */,
+				A63ECF001DE5DDCF0047A521 /* MRLoginConstants.swift in Sources */,
+				A63ECEEE1DE5D4A80047A521 /* MRPasscodeViewController.swift in Sources */,
+				A6597ACD1DF1E8390038CA71 /* Validator.m in Sources */,
+				A63ECEF81DE5D5530047A521 /* TextFieldHandler.swift in Sources */,
+				A63ECF0D1DE5F3450047A521 /* AppDelegate+AppIntro.swift in Sources */,
+				A6597ACF1DF20C670038CA71 /* MainAppViewController.swift in Sources */,
+				A63ECEED1DE5D4A80047A521 /* MRFingerPrint.swift in Sources */,
+				A63ECEF51DE5D52C0047A521 /* MRVerifyCredentials.swift in Sources */,
 				A63ECECE1DE5D3DB0047A521 /* AppDelegate.swift in Sources */,
+				A63ECEFB1DE5D96C0047A521 /* MRLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,11 +412,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MRBuildingBlocks/MRBuildingBlocks.entitlements;
 				DEVELOPMENT_TEAM = LC6LA68FBS;
 				INFOPLIST_FILE = MRBuildingBlocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farawaystars.MRBuildingBlocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MRBuildingBlocks/MRBuildingBlocks-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,11 +427,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MRBuildingBlocks/MRBuildingBlocks.entitlements;
 				DEVELOPMENT_TEAM = LC6LA68FBS;
 				INFOPLIST_FILE = MRBuildingBlocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farawaystars.MRBuildingBlocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MRBuildingBlocks/MRBuildingBlocks-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +457,7 @@
 				A63ECEDE1DE5D3DB0047A521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
