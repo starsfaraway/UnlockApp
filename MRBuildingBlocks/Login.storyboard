@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mN1-IH-5eu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mN1-IH-5eu">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGradient" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-Qg-XX9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-QK-aiv">
                                 <rect key="frame" x="16" y="120" width="288" height="131"/>
                                 <subviews>
@@ -49,9 +53,6 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="login:" destination="5as-Hh-twY" eventType="touchUpInside" id="UMH-KL-a8x"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -59,10 +60,28 @@
                                     <constraint firstAttribute="height" constant="131" id="kke-ob-RK5"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-yy-fIw">
+                                <rect key="frame" x="53" y="518" width="215" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PG1-w0-ZbK"/>
+                                    <constraint firstAttribute="width" constant="215" id="m01-gu-zEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2bG-Qg-XX9" firstAttribute="top" secondItem="GVr-IT-apa" secondAttribute="top" id="CQZ-y0-X4m"/>
+                            <constraint firstAttribute="trailing" secondItem="2bG-Qg-XX9" secondAttribute="trailing" id="DCT-Pb-YqI"/>
+                            <constraint firstItem="2bG-Qg-XX9" firstAttribute="leading" secondItem="GVr-IT-apa" secondAttribute="leading" id="DJO-qw-3zl"/>
                             <constraint firstItem="cDw-QK-aiv" firstAttribute="leading" secondItem="GVr-IT-apa" secondAttribute="leadingMargin" id="FHD-1I-9Dy"/>
+                            <constraint firstItem="jFJ-ca-w89" firstAttribute="top" secondItem="A7a-yy-fIw" secondAttribute="bottom" constant="20" id="G4V-ML-t8c"/>
+                            <constraint firstItem="A7a-yy-fIw" firstAttribute="centerX" secondItem="GVr-IT-apa" secondAttribute="centerX" id="JP2-4h-SLe"/>
+                            <constraint firstItem="jFJ-ca-w89" firstAttribute="top" secondItem="2bG-Qg-XX9" secondAttribute="bottom" id="K8l-Jd-zYB"/>
                             <constraint firstItem="cDw-QK-aiv" firstAttribute="top" secondItem="dZ2-4B-R4z" secondAttribute="bottom" constant="100" id="Yku-9b-y8L"/>
                             <constraint firstItem="cDw-QK-aiv" firstAttribute="trailing" secondItem="GVr-IT-apa" secondAttribute="trailingMargin" id="tfF-MJ-z87"/>
                         </constraints>
@@ -72,6 +91,7 @@
                         <outlet property="emailTextField" destination="o2u-Di-gwz" id="a3M-Ha-ZlD"/>
                         <outlet property="loginButton" destination="57e-N4-AIF" id="WOJ-Dk-kr0"/>
                         <outlet property="passwordTextField" destination="vii-nX-kHh" id="mSi-Qb-2B8"/>
+                        <outlet property="signUpButton" destination="A7a-yy-fIw" id="nr1-vw-ejh"/>
                         <segue destination="raJ-EI-9au" kind="show" identifier="toMainApp" id="SGs-We-meX"/>
                         <segue destination="47o-yZ-Dy3" kind="show" identifier="toPasscode" id="fvR-3R-GNi"/>
                     </connections>
@@ -115,4 +135,7 @@
             <point key="canvasLocation" x="795" y="-55"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backGradient" width="720" height="720"/>
+    </resources>
 </document>

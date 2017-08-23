@@ -11,7 +11,8 @@ import UIKit
 
 extension AppDelegate {
     func selectAppIntro() -> UIViewController? {
-        switch MRVerifyCredentials().preferredLoginMethod {
+        
+        switch MRVerifyCredentials.preferredLoginMethod {
         case PreferredLoginMethod.password:
             let sb = UIStoryboard(name: "Login", bundle: nil)
             return sb.instantiateInitialViewController()

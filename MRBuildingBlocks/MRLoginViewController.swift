@@ -13,30 +13,33 @@ class MRLoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let hasLogin = MRVerifyCredentials().hasLoginCredentials
         
         if hasLogin {
-            loginButton.setTitle("Log in", for: UIControlState.normal)
+            loginButton.setTitle("Login", for: UIControlState.normal)
+            signUpButton.setTitle("Sign up", for: UIControlState.normal)
         }
         else {
-            NotificationCenter.default.addObserver(self, selector: #selector(goToApp), name: NSNotification.Name(rawValue: LoginConstants.alert_dismissed_password), object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(createPasscode), name: NSNotification.Name(rawValue: LoginConstants.alert_dismissed_passcode), object: nil)
-            loginButton.setTitle("Sign up", for: UIControlState.normal)
+//            NotificationCenter.default.addObserver(self, selector: #selector(goToApp), name: NSNotification.Name(rawValue: LoginConstants.alert_dismissed_password), object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(createPasscode), name: NSNotification.Name(rawValue: LoginConstants.alert_dismissed_passcode), object: nil)
         }
 
         if let storedUsername = MRVerifyCredentials.getStoredUsername() {
-            
             emailTextField.text = storedUsername as String}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        if(self.loginButton.titleLabel?.text == "Sign up") {
+            self.signUpToggle()
+        }else{
+            self.loginButton.addTarget(self, action: #selector(login), for: UIControlEvents.touchUpInside)
+        }
+        
+        self.signUpButton.addTarget(self, action: #selector(signUpToggle), for: UIControlEvents.touchUpInside)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,7 +49,6 @@ class MRLoginViewController: UIViewController {
 
     
     func checkLogin(username: String, password: String ) -> Bool {
-        
         return MRVerifyCredentials().verifyLogin(name: username, password: password)
     }
     
@@ -66,26 +68,28 @@ class MRLoginViewController: UIViewController {
         self.present(alertView, animated: true, completion: nil)
     }
     
-    @IBAction func login(_ sender: UIButton) {
-
-        if (emailTextField.text == "" || passwordTextField.text == "" || !Validator.validateEmail(emailTextField.text)) {
-            self.showBadPasswordAlert()
-            return;
-        }
-
+    func login(_ sender: UIButton) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
 
-        if sender.titleLabel?.text == "Sign up" {
+        if (emailTextField.text == "" || passwordTextField.text == "" || !Validator.validateEmail(emailTextField.text)) {
+            self.showBadPasswordAlert()
+            return;}
 
+        if self.loginButton.titleLabel?.text == "Sign up" {
+            if((MRVerifyCredentials.getStoredUsername()?.characters.count)! > 0) {
+                self.signUpToggle()
+                return
+            }
             MRVerifyCredentials().setLoginCredentials(name: self.emailTextField.text!, password: passwordTextField.text!)
             let alert = MRSelectLoginAlertController(title: "", message: "", preferredStyle:UIAlertControllerStyle.alert)
             self.present(alert, animated: true, completion: {
-                
             })
             
-        } else if sender.titleLabel?.text == "Log in" {
+        } else if self.loginButton.titleLabel?.text == "Login" {
             if(MRVerifyCredentials().verifyLogin(name: emailTextField.text!, password: passwordTextField.text!)){
+                
+                
                 self.goToApp()
             } else {
                 if(!Validator.validateEmail(emailTextField.text)){
@@ -93,6 +97,32 @@ class MRLoginViewController: UIViewController {
                 }else{
                     self.showBadPasswordAlert()}
             }
+        }
+    }
+    
+    func signUp(_ sender: UIButton) {
+        if(self.emailTextField.text! != MRVerifyCredentials.getStoredUsername()) {
+            MRVerifyCredentials().setLoginCredentials(name: self.emailTextField.text!, password: passwordTextField.text!)
+            let alert = MRSelectLoginAlertController(title: "", message: "", preferredStyle:UIAlertControllerStyle.alert)
+            self.present(alert, animated: true, completion: {
+            })
+        }else {
+            self.login(UIButton())
+        }
+    }
+    
+    
+    @IBAction func signUpToggle() {
+        if(self.loginButton.titleLabel?.text == "Login") {
+            self.signUpButton.setTitle("Login", for: UIControlState.normal)
+            self.loginButton.setTitle("Sign up", for: UIControlState.normal)
+            self.loginButton.removeTarget(self, action: #selector(login), for: UIControlEvents.touchUpInside)
+            self.loginButton.addTarget(self, action: #selector(signUp), for: UIControlEvents.touchUpInside)
+        }else{
+            self.signUpButton.setTitle("Sign up", for: UIControlState.normal)
+            self.loginButton.setTitle("Login", for: UIControlState.normal)
+            self.loginButton.removeTarget(self, action: #selector(signUp), for: UIControlEvents.touchUpInside)
+            self.loginButton.addTarget(self, action: #selector(login), for: UIControlEvents.touchUpInside)
         }
     }
 
@@ -103,5 +133,6 @@ class MRLoginViewController: UIViewController {
     func createPasscode() {
         self.performSegue(withIdentifier: "toPasscode", sender: self)
     }
+    
 
 }

@@ -13,20 +13,13 @@ class MainAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer!.isEnabled = false
-        // Do any additional setup after loading the view.
+                    NotificationCenter.default.addObserver(self, selector: #selector(createPasscode), name: NSNotification.Name(rawValue: LoginConstants.alert_dismissed_passcode), object: nil)
+
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSLog("num of vcs: \(self.navigationController?.viewControllers.count)")
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        NSLog("num of vcs: \(String(describing: self.navigationController?.viewControllers.count))")
     }
     
     @IBAction func localLogOut(_ sender: Any) {
@@ -34,6 +27,17 @@ class MainAppViewController: UIViewController {
             self.performSegue(withIdentifier: "localLogOut", sender: self)
         }
 
+    @IBAction func showLoginSetting(_ sender: Any) {
+        let alert = MRSelectLoginAlertController(title: "", message: "", preferredStyle:UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: {
+            
+        })
+    }
+    
+    func createPasscode() {
+        
+        self.performSegue(withIdentifier: "toPasscode", sender: self)
+    }
 
 
 }

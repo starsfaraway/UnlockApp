@@ -13,11 +13,6 @@ class MRPasscodeViewController: UIViewController {
     let verifier = MRVerifyCredentials()
     @IBOutlet weak var passcodeTextfield: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,13 +27,6 @@ class MRPasscodeViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     private func setupTextField() {
        self.passcodeTextfield.delegate = textFieldHandler
         self.passcodeTextfield.becomeFirstResponder()
@@ -47,7 +35,7 @@ class MRPasscodeViewController: UIViewController {
     }
     
     private func checkIfTouchId() {
-        if(MRVerifyCredentials().preferredLoginMethod == PreferredLoginMethod.touchid){
+        if(MRVerifyCredentials.preferredLoginMethod == PreferredLoginMethod.touchid){
             self.passcodeTextfield.resignFirstResponder()
             MRFingerPrint.touchIdLogin(vc: self)
         }
@@ -55,9 +43,12 @@ class MRPasscodeViewController: UIViewController {
     
     //@objc added so I can use Notification Center for changes in UITextField
     @objc private func checkPasscode(notification : NSNotification) {
-        
-        if(self.passcodeTextfield.text?.characters.count != 4){
-            return
+
+        if let count = self.passcodeTextfield.text?.characters.count {
+            if(count < 4 ){
+                return}
+            if(count > 4) {
+                self.passcodeTextfield.text = nil}
         }
         
         if(verifier.hasLoginPasscode == false) {
@@ -85,7 +76,7 @@ class MRPasscodeViewController: UIViewController {
                 if(pswd == tempPassword){
                     self.verifier.setPasscode(code: pswd)
                     self.verifier.hasLoginPasscode = true
-                    self.verifier.preferredLoginMethod = PreferredLoginMethod.passcode
+                    MRVerifyCredentials.preferredLoginMethod = PreferredLoginMethod.passcode
                     self.goToMainApp()
                 }
             }

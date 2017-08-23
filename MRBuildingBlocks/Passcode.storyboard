@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EdR-gD-fho">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EdR-gD-fho">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +21,30 @@
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGradient" translatesAutoresizingMaskIntoConstraints="NO" id="QoZ-TV-Cap">
+                                <rect key="frame" x="0.0" y="-65" width="414" height="737"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWs-JM-X42">
                                 <rect key="frame" x="16" y="80" width="382" height="247"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cys-g7-FNh">
                                         <rect key="frame" x="8" y="8" width="366" height="74"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="0lz-i3-xbO"/>
                                         </constraints>
                                         <string key="text">Enter your passcode
  for this app:</string>
-                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="○○○○" textAlignment="center" minimumFontSize="42" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6XT-1d-MNg">
                                         <rect key="frame" x="91" y="90" width="200" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="qnP-38-WQb"/>
@@ -59,11 +66,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iOq-SP-bfe" firstAttribute="top" secondItem="QoZ-TV-Cap" secondAttribute="bottom" id="4ln-6i-yJU"/>
+                            <constraint firstAttribute="trailing" secondItem="QoZ-TV-Cap" secondAttribute="trailing" id="6vY-MQ-5er"/>
+                            <constraint firstItem="QoZ-TV-Cap" firstAttribute="leading" secondItem="Im3-aq-era" secondAttribute="leading" id="8M6-Db-V1p"/>
                             <constraint firstItem="QWs-JM-X42" firstAttribute="leading" secondItem="Im3-aq-era" secondAttribute="leading" constant="16" id="W1i-OC-MoE"/>
                             <constraint firstItem="QWs-JM-X42" firstAttribute="top" secondItem="YMn-GI-8AA" secondAttribute="bottom" constant="80" id="dRq-R8-ZEE"/>
                             <constraint firstAttribute="trailing" secondItem="QWs-JM-X42" secondAttribute="trailing" constant="16" id="nSS-hp-gJw"/>
+                            <constraint firstItem="QoZ-TV-Cap" firstAttribute="top" secondItem="Im3-aq-era" secondAttribute="top" constant="-65" id="wV4-fE-h0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IOM-eF-Q0Y"/>
@@ -74,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVd-J3-tsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="24"/>
+            <point key="canvasLocation" x="1073.913043478261" y="23.64130434782609"/>
         </scene>
         <!--Main-->
         <scene sceneID="PL5-mN-qFd">
@@ -89,7 +100,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EdR-gD-fho" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="46X-49-aIh">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" translucent="NO" id="46X-49-aIh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -103,4 +114,7 @@
             <point key="canvasLocation" x="399" y="24"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backGradient" width="720" height="720"/>
+    </resources>
 </document>

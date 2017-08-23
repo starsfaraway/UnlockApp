@@ -12,7 +12,7 @@ class MRVerifyCredentials: NSObject {
     private var keychainWrapper = KeychainWrapper()
     var tempPasscode : String?
     
-    var preferredLoginMethod : PreferredLoginMethod {
+    class var preferredLoginMethod : PreferredLoginMethod {
         get {
             return PreferredLoginMethod(rawValue: UserDefaults.standard.integer(forKey: LoginConstants.preferred_login_method))!}
         set(method){
@@ -23,6 +23,7 @@ class MRVerifyCredentials: NSObject {
             }
         }
     }
+    
     
     var hasLoginCredentials : Bool {
         get{
@@ -58,7 +59,7 @@ class MRVerifyCredentials: NSObject {
         keychainWrapper.mySetObject(code, forKey:kSecAttrAccount)
         keychainWrapper.writeToKeychain()
         self.hasLoginCredentials = true
-        self.preferredLoginMethod = PreferredLoginMethod.passcode
+        MRVerifyCredentials.preferredLoginMethod = PreferredLoginMethod.passcode
     }
     
     func verifyPasscode(code : String) -> Bool {
@@ -77,13 +78,13 @@ class MRVerifyCredentials: NSObject {
         keychainWrapper.mySetObject(password, forKey:kSecValueData)
         keychainWrapper.writeToKeychain()
         self.hasLoginCredentials = true
-        self.preferredLoginMethod = PreferredLoginMethod.password
+        MRVerifyCredentials.preferredLoginMethod = PreferredLoginMethod.password
         UserDefaults.standard.setValue(name, forKey: LoginConstants.user_name)
         UserDefaults.standard.synchronize()
     }
     
     func verifyLogin(name : String, password: String) -> Bool {
-        NSLog("username \(UserDefaults.standard.value(forKey: LoginConstants.user_name) as? String) and password: \(keychainWrapper.myObject(forKey:LoginConstants.password_key) as? String)")
+        NSLog("username \(String(describing: UserDefaults.standard.value(forKey: LoginConstants.user_name) as? String)) and password: \(String(describing: keychainWrapper.myObject(forKey:LoginConstants.password_key) as? String))")
         if let checkPassword = keychainWrapper.myObject(forKey:kSecValueData) as? String {
             if password == checkPassword &&
                 name == UserDefaults.standard.value(forKey: LoginConstants.user_name) as? String {
@@ -98,7 +99,7 @@ class MRVerifyCredentials: NSObject {
     func resetLogin() {
         self.hasLoginCredentials = false
         self.hasLoginPasscode = false
-        self.preferredLoginMethod = PreferredLoginMethod.password}
+        MRVerifyCredentials.preferredLoginMethod = PreferredLoginMethod.password}
     
 
 }
